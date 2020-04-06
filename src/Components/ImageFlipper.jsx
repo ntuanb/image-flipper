@@ -34,9 +34,14 @@ class ImageFlipper extends React.Component {
   render() {
     return (
       <div className="image-flipper">
-        <input className="image-flipper__uploader" type="file" value={this.state.value} onChange={this.onChange} />
-
-        <ImageViewer image={this.state.image} key={this.state.image}/>
+        {
+          this.state.image.length === 0 
+            ? <div>
+                <p className="image-flipper__description">Please upload an image and use the arrow keys to flip the image</p>
+                <input className="image-flipper__uploader" type="file" value={this.state.value} onChange={this.onChange} />
+              </div>
+            : <ImageViewer image={this.state.image} key={this.state.image}/>
+        }
       </div>
     );
   }

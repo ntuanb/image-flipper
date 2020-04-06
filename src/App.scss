@@ -1,20 +1,17 @@
 .title {
-  text-align: center;
-  margin-top: 1rem;
+	text-align: center;
+	margin-top: 1rem;
 	margin-bottom: 1rem;
+	position: absolute;
+	top: 1rem;
+	width: 100%;
 }
 
 @media (min-width: 961px) {
 	.title {
-		position: absolute;
     transform: rotateZ(-90deg) translate(0, -50%);
     left: -100px;
-    top: 45%;
+		top: 45%;
+		width: auto;
 	}
-}
-
-.description {
-  text-align: center;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
 }

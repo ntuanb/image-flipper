@@ -3,8 +3,10 @@ import './ImageViewer.scss';
 
 import Button from './Button';
 
+const ROTATE_DEGREES = 60;
+
 class ImageViewer extends React.Component {
-    
+
   constructor(props) {
     super(props);
 
@@ -16,10 +18,16 @@ class ImageViewer extends React.Component {
       style: {}
     }
 
+    this.flipUpLeft = this.flipUpLeft.bind(this);
     this.flipUp = this.flipUp.bind(this);
-    this.flipRight = this.flipRight.bind(this);
-    this.flipDown = this.flipDown.bind(this);
+    this.flipUpRight = this.flipUpRight.bind(this);
+
     this.flipLeft = this.flipLeft.bind(this);
+    this.flipRight = this.flipRight.bind(this);
+
+    this.flipDownLeft = this.flipDownLeft.bind(this);
+    this.flipDown = this.flipDown.bind(this);
+    this.flipDownRight = this.flipDownRight.bind(this);
   }
 
   buildStyle(x, y, z) {
@@ -30,8 +38,18 @@ class ImageViewer extends React.Component {
     return styles;
   }
 
+  flipUpLeft() {
+    let x = this.state.x - ROTATE_DEGREES;
+    let y = this.state.x - ROTATE_DEGREES;
+
+    this.setState({
+      x: x,
+      style: this.buildStyle(x, y, this.state.z)
+    });
+  }
+
   flipUp() {
-    let x = this.state.x - 180;
+    let x = this.state.x - ROTATE_DEGREES;
 
     this.setState({
       x: x,
@@ -39,26 +57,18 @@ class ImageViewer extends React.Component {
     });
   }
 
-  flipRight() {
-    let y = this.state.y + 180;
-
-    this.setState({
-      y: y,
-      style: this.buildStyle(this.state.x, y, this.state.z)
-    });
-  }
-
-  flipDown() {
-    let x = this.state.x + 180;
+  flipUpRight() {
+    let x = this.state.x - ROTATE_DEGREES;
+    let y = this.state.x - ROTATE_DEGREES;
 
     this.setState({
       x: x,
-      style: this.buildStyle(x, this.state.y, this.state.z)
+      style: this.buildStyle(x, y, this.state.z)
     });
   }
 
   flipLeft() {
-    let y = this.state.y - 180;
+    let y = this.state.y - ROTATE_DEGREES;
 
     this.setState({
       y: y,
@@ -66,30 +76,66 @@ class ImageViewer extends React.Component {
     });
   }
 
-  renderButtons(image) {
-    let  buttons = null;
 
-    if (image.length > 0) {
-      buttons = <div>
-        <Button className="image-viewer__button image-viewer__button--top" icon="top" onClick={this.flipUp} />
-        <Button className="image-viewer__button image-viewer__button--right" icon="right" onClick={this.flipRight} />
-        <Button className="image-viewer__button image-viewer__button--bottom" icon="bottom" onClick={this.flipDown} />
-        <Button className="image-viewer__button image-viewer__button--left" icon="left" onClick={this.flipLeft} />
-      </div>
-    }
+  flipRight() {
+    let x = this.state.x;
+    let y = this.state.y + ROTATE_DEGREES;
+    let z = this.state.z;
 
-    return buttons;
+    this.setState({
+      y: y,
+      style: this.buildStyle(x, y, z)
+    });
+  }
+
+  flipDownLeft() {
+    let x = this.state.x - ROTATE_DEGREES;
+    let y = this.state.y + ROTATE_DEGREES;
+
+    this.setState({
+      x: x,
+      style: this.buildStyle(x, y, this.state.z)
+    });
+  }
+
+  flipDown() {
+    let x = this.state.x + ROTATE_DEGREES;
+
+    this.setState({
+      x: x,
+      style: this.buildStyle(x, this.state.y, this.state.z)
+    });
+  }
+
+  flipDownRight() {
+    let x = this.state.x + ROTATE_DEGREES;
+    let y = this.state.y + ROTATE_DEGREES;
+    let z = this.state.z;
+
+    this.setState({
+      x: x,
+      style: this.buildStyle(x, y, z)
+    });
   }
 
   render() {
 
-    let buttons = this.renderButtons(this.state.image);
-
     return (
       <div className="image-viewer">
         <img style={this.state.style} className="image-viewer__image" src={this.state.image} />
+        
+        <div className="image-view__buttons">
+          {/* <Button className="image-viewer__button image-viewer__button--top-left" icon="top" onClick={this.flipUpLeft} /> */}
+          <Button className="image-viewer__button image-viewer__button--top" icon="top" onClick={this.flipUp} />
+          {/* <Button className="image-viewer__button image-viewer__button--top-right" icon="top" onClick={this.flipUpRight} /> */}
 
-        { buttons ? buttons : '' }
+          <Button className="image-viewer__button image-viewer__button--right" icon="right" onClick={this.flipRight} />
+          <Button className="image-viewer__button image-viewer__button--left" icon="left" onClick={this.flipLeft} />
+
+          {/* <Button className="image-viewer__button image-viewer__button--bottom-left" icon="bottom" onClick={this.flipDownLeft} /> */}
+          <Button className="image-viewer__button image-viewer__button--bottom" icon="bottom" onClick={this.flipDown} />
+          {/* <Button className="image-viewer__button image-viewer__button--bottom-right" icon="bottom" onClick={this.flipDownRight} /> */}
+        </div>
       </div>
     );
   }
