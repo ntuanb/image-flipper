@@ -3,7 +3,6 @@ import React from 'react';
 import './ImageFlipper.scss';
 
 import ImageViewer from './ImageViewer';
-import DirectionButtons from './DirectionButtons';
 
 class ImageFlipper extends React.Component {
     
@@ -18,7 +17,8 @@ class ImageFlipper extends React.Component {
   }
  
   onChange(e) {
-    e.preventDefault(); 
+    e.preventDefault();
+    
     let reader = new FileReader();
     let file = e.target.files[0];
 

@@ -1,16 +1,18 @@
 .image-viewer {
   max-width: 100%;
   position: relative;
+  margin: 0 auto;
 }
 
+
 .image-viewer__image {
-  max-width: 100%;
+  max-width: 500px;
+  width: 100%;
+  transition: transform 0.2s ease;
 }
 
 .image-viewer__buttons {
   position: relative;
-  height: 200px;
-  width: 200px;
 }
 
 .image-viewer__button {
@@ -19,20 +21,24 @@
 
 .image-viewer__button--top {
   top: 0;
-  left: 100px;
+  left: 50%;
+  transform: translate(-50%, 0%);
 }
 
 .image-viewer__button--right {
-  top: 100px;
+  top: 50%;
   right: 0;
+  transform: translate(0%, -50%);
 }
 
 .image-viewer__button--bottom {
   bottom: 0;
-  left: 100px;
+  left: 50%;
+  transform: translate(-50%, 0%);
 }
 
 .image-viewer__button--left {
-  top: 100px;
+  top: 50%;
   left: 0;
+  transform: translate(0%, -50%);
 }
