@@ -10,7 +10,7 @@ class ImageFlipper extends React.Component {
     super();
 
     this.state = { 
-      image: []
+      image: null
     };
 
     this.onChange = this.onChange.bind(this);
@@ -35,7 +35,7 @@ class ImageFlipper extends React.Component {
     return (
       <div className="image-flipper">
         {
-          this.state.image.length === 0 
+          !this.state.image 
             ? <div>
                 <p className="image-flipper__description">Please upload an image and use the arrow keys to flip the image</p>
                 <input className="image-flipper__uploader" type="file" value={this.state.value} onChange={this.onChange} />

@@ -3,7 +3,7 @@ import './ImageViewer.scss';
 
 import Button from './Button';
 
-const ROTATE_DEGREES = 60;
+const ROTATE_DEGREES = 180;
 
 class ImageViewer extends React.Component {
 
