@@ -51,9 +51,15 @@ table {
 
 body {
   font-family: 'Montserrat', sans-serif;
-  margin: 1rem;
 }
 
 h1 {
   font-size: 3rem;
+}
+
+canvas {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: -999;
 }

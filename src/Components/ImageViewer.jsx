@@ -8,8 +8,6 @@ class ImageViewer extends React.Component {
   constructor(props) {
     super(props);
 
-    console.log(props.image);
-
     this.state = {
       image: props.image,
       x: 0,
@@ -68,10 +66,10 @@ class ImageViewer extends React.Component {
     });
   }
 
-  renderButtons() {
+  renderButtons(image) {
     let  buttons = null;
 
-    if (this.state.image) {
+    if (image.length > 0) {
       buttons = <div>
         <Button className="image-viewer__button image-viewer__button--top" icon="top" onClick={this.flipUp} />
         <Button className="image-viewer__button image-viewer__button--right" icon="right" onClick={this.flipRight} />
@@ -85,11 +83,11 @@ class ImageViewer extends React.Component {
 
   render() {
 
-    let buttons = this.renderButtons();
+    let buttons = this.renderButtons(this.state.image);
 
     return (
-      <div class="image-viewer">
-        <img style={this.state.style} class="image-viewer__image" src={this.state.image} />
+      <div className="image-viewer">
+        <img style={this.state.style} className="image-viewer__image" src={this.state.image} />
 
         { buttons ? buttons : '' }
       </div>

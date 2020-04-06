@@ -40,5 +40,18 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/trianglify/2.0.0/trianglify.min.js"></script>
+    <script>
+      let trianglify = function() {
+        var pattern = Trianglify({
+          width: window.innerWidth,
+          height: window.innerHeight
+        });
+        document.body.appendChild(pattern.canvas());
+      }
+
+      trianglify();
+      window.addEventListener('resize', trianglify);
+    </script>
   </body>
 </html>

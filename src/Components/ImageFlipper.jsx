@@ -18,7 +18,7 @@ class ImageFlipper extends React.Component {
  
   onChange(e) {
     e.preventDefault();
-    
+
     let reader = new FileReader();
     let file = e.target.files[0];
 
@@ -33,8 +33,8 @@ class ImageFlipper extends React.Component {
 
   render() {
     return (
-      <div class="image-flipper">
-        <input class="image-flipper__uploader" type="file" value={this.state.value} onChange={this.onChange} />
+      <div className="image-flipper">
+        <input className="image-flipper__uploader" type="file" value={this.state.value} onChange={this.onChange} />
 
         <ImageViewer image={this.state.image} key={this.state.image}/>
       </div>
