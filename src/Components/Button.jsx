@@ -25,8 +25,12 @@ class Button extends React.Component {
 
     render() {
       return (
-        <button className={`button ${ this.props.className }`} onClick={this.state.onClick}>
-            <FontAwesomeIcon icon={this.state.icon} />
+        <button className={`button ${ this.props.className ? this.props.className : '' }`} onClick={this.state.onClick}>
+            {
+              this.state.icon
+                ? <FontAwesomeIcon icon={this.state.icon} />
+                : ''
+            }
         </button>
       );
     }

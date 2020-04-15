@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/image-flipper/static/css/main.6acf0793.chunk.css",
+    "main.css": "/image-flipper/static/css/main.50a30cbf.chunk.css",
     "main.js": "/image-flipper/static/js/main.f8e90b79.chunk.js",
     "main.js.map": "/image-flipper/static/js/main.f8e90b79.chunk.js.map",
     "runtime-main.js": "/image-flipper/static/js/runtime-main.460b41f9.js",
@@ -8,15 +8,15 @@
     "static/js/2.bb1fcbbd.chunk.js": "/image-flipper/static/js/2.bb1fcbbd.chunk.js",
     "static/js/2.bb1fcbbd.chunk.js.map": "/image-flipper/static/js/2.bb1fcbbd.chunk.js.map",
     "index.html": "/image-flipper/index.html",
-    "precache-manifest.ddc39b9d04b707555c9d2ce191be7063.js": "/image-flipper/precache-manifest.ddc39b9d04b707555c9d2ce191be7063.js",
+    "precache-manifest.d1b6f306a520a5acf8606251ff3ab969.js": "/image-flipper/precache-manifest.d1b6f306a520a5acf8606251ff3ab969.js",
     "service-worker.js": "/image-flipper/service-worker.js",
-    "static/css/main.6acf0793.chunk.css.map": "/image-flipper/static/css/main.6acf0793.chunk.css.map",
+    "static/css/main.50a30cbf.chunk.css.map": "/image-flipper/static/css/main.50a30cbf.chunk.css.map",
     "static/js/2.bb1fcbbd.chunk.js.LICENSE.txt": "/image-flipper/static/js/2.bb1fcbbd.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.460b41f9.js",
     "static/js/2.bb1fcbbd.chunk.js",
-    "static/css/main.6acf0793.chunk.css",
+    "static/css/main.50a30cbf.chunk.css",
     "static/js/main.f8e90b79.chunk.js"
   ]
 }
