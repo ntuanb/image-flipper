@@ -31,8 +31,10 @@ class ImageViewer extends React.Component {
   }
 
   buildStyle(x, y, z) {
+    let transform = 'rotateX(' + x + 'deg) rotateY(' + y + 'deg) rotateZ(' + z + 'deg)';
+
     let styles = {
-      transform: 'rotateX(' + x + 'deg) rotateY(' + y + 'deg) rotateZ(' + z + 'deg)'
+      transform: transform
     };
 
     return styles;
